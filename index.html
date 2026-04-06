@@ -1,0 +1,1143 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Захаренко Оксана Геннадьевна — Финансовый директор</title>
+  <meta
+    name="description"
+    content="Финансовый директор на аутсорсе для среднего бизнеса. Управленческий учет, бюджетирование, контроль денежных потоков, финансовые модели и повышение доходности бизнеса."
+  />
+
+  <style>
+    :root {
+      --bg: #07101c;
+      --bg2: #0b1424;
+      --surface: rgba(255,255,255,0.06);
+      --surface-strong: rgba(255,255,255,0.08);
+      --text: #ecf3ff;
+      --muted: #a9b8d3;
+      --line: rgba(255,255,255,0.10);
+      --accent: #69b7ff;
+      --accent2: #8b7bff;
+      --accent3: #31d0aa;
+      --shadow: 0 18px 60px rgba(0,0,0,.34);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 15%, rgba(105,183,255,.16), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(139,123,255,.16), transparent 24%),
+        radial-gradient(circle at 50% 80%, rgba(49,208,170,.10), transparent 26%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      width: 38vw;
+      height: 38vw;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: .18;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatOrb 14s ease-in-out infinite;
+    }
+
+    body::before {
+      top: -10vw;
+      right: -8vw;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+    }
+
+    body::after {
+      left: -10vw;
+      bottom: -12vw;
+      background: linear-gradient(135deg, var(--accent3), var(--accent));
+      animation-delay: -6s;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(0,18px,0) scale(1.08); }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(7,16,28,.56);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .brand span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color .25s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+      will-change: transform;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 12px 30px rgba(105,183,255,.28);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 16px 36px rgba(105,183,255,.38);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,.20);
+      background: rgba(255,255,255,.07);
+    }
+
+    .hero {
+      padding: 92px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .glass {
+      position: relative;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .glass::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 20%, rgba(255,255,255,.08) 35%, transparent 50%);
+      transform: translateX(-120%);
+      transition: transform .8s ease;
+      pointer-events: none;
+    }
+
+    .glass:hover::before {
+      transform: translateX(120%);
+    }
+
+    .hero-card {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: #d8e5ff;
+      font-size: 14px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      box-shadow: 0 0 14px rgba(105,183,255,.75);
+    }
+
+    .hero-title {
+      margin: 0 0 20px;
+      line-height: .97;
+      letter-spacing: -.05em;
+      font-size: clamp(42px, 7vw, 80px);
+      font-weight: 900;
+      background: linear-gradient(135deg, rgba(255,255,255,.96) 0%, rgba(168,213,255,.96) 26%, rgba(139,123,255,.96) 62%, rgba(49,208,170,.96) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      opacity: .96;
+      animation: titleGlow 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      from { filter: drop-shadow(0 0 0 rgba(105,183,255,0)); }
+      to { filter: drop-shadow(0 0 16px rgba(105,183,255,.14)); }
+    }
+
+    .hero-title span { display: block; }
+
+    .hero-lead {
+      max-width: 760px;
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 20px;
+    }
+
+    .hero-points {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-points li {
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      font-weight: 600;
+      color: #dce8ff;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .hero-points li:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(105,183,255,.30);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .metric {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      transition: transform .28s ease, border-color .28s ease;
+    }
+
+    .metric:hover {
+      transform: translateY(-6px);
+      border-color: rgba(139,123,255,.30);
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 6px;
+    }
+
+    .metric-note {
+      color: #dce7ff;
+      font-size: 15px;
+    }
+
+    .section {
+      padding: 84px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .divider {
+      width: 74px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+      margin: 0 0 18px;
+      box-shadow: 0 0 16px rgba(105,183,255,.22);
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .section-subtitle {
+      margin: 0 0 34px;
+      max-width: 760px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .split-grid,
+    .cases-grid,
+    .contact-card,
+    .hero-grid {
+      will-change: transform, opacity;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .panel {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      transition: transform .28s ease, border-color .28s ease, background .28s ease;
+    }
+
+    .panel:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(105,183,255,.24);
+    }
+
+    .panel h3 {
+      margin: 0 0 16px;
+      font-size: 24px;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 22px;
+      color: #d9e4fc;
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      box-shadow: 0 0 14px rgba(105,183,255,.55);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      min-height: 230px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      box-shadow: var(--shadow);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+      transform-style: preserve-3d;
+    }
+
+    .skill-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -30% -40% auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(105,183,255,.24), transparent 62%);
+      transition: transform .35s ease, opacity .35s ease;
+      opacity: .8;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+      border-color: rgba(139,123,255,.30);
+      box-shadow: 0 22px 60px rgba(0,0,0,.42);
+    }
+
+    .skill-card:hover::before {
+      transform: scale(1.12);
+      opacity: 1;
+    }
+
+    .skill-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(105,183,255,.18), rgba(139,123,255,.22));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .skill-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .skill-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .case-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px;
+      border-radius: 24px;
+      border: 1px solid rgba(105,183,255,.18);
+      background:
+        linear-gradient(180deg, rgba(105,183,255,.08), rgba(255,255,255,.03)),
+        rgba(18,28,47,.92);
+      box-shadow: var(--shadow);
+      transition: transform .32s ease, border-color .32s ease, box-shadow .32s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(105,183,255,.34);
+      box-shadow: 0 24px 66px rgba(0,0,0,.44);
+    }
+
+    .case-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+    }
+
+    .case-card::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,123,255,.14), transparent 62%);
+      pointer-events: none;
+    }
+
+    .case-tag {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      font-size: 13px;
+      font-weight: 700;
+      color: #dce8ff;
+    }
+
+    .case-card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -.02em;
+    }
+
+    .case-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .case-result {
+      font-size: 17px;
+      font-weight: 700;
+      color: #eef4ff;
+    }
+
+    .expertise-box {
+      padding: 30px;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .expertise-box p {
+      margin: 0 0 22px;
+      max-width: 860px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag {
+      padding: 11px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      color: #dce8ff;
+      font-weight: 600;
+      font-size: 14px;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-3px);
+      border-color: rgba(105,183,255,.30);
+      background: rgba(105,183,255,.08);
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      padding: 32px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(105,183,255,.08), rgba(139,123,255,.06)),
+        rgba(18,28,47,.92);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(49,208,170,.14), transparent 62%);
+      pointer-events: none;
+    }
+
+    .contact-card h2 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: -.03em;
+    }
+
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 640px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .contact-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: #eef4ff;
+      font-weight: 600;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(105,183,255,.26);
+      background: rgba(255,255,255,.07);
+    }
+
+    .footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px) scale(.985);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .reveal-delay-1 { transition-delay: .08s; }
+    .reveal-delay-2 { transition-delay: .16s; }
+    .reveal-delay-3 { transition-delay: .24s; }
+    .reveal-delay-4 { transition-delay: .32s; }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .split-grid,
+      .cases-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      .hero-card,
+      .panel,
+      .metric,
+      .case-card,
+      .expertise-box,
+      .contact-card {
+        padding: 22px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-points li,
+      .tag,
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .section {
+        padding: 66px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#top" class="brand">Оксана <span>Zaharenko</span></a>
+
+      <nav class="nav-links">
+        <a href="#about">Обо мне</a>
+        <a href="#services">Компетенции</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#tools">Инструменты</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+      <a class="btn btn-secondary" href="#contact">Связаться</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="glass hero-card reveal">
+          <div class="eyebrow">Финансовый директор на аутсорсе</div>
+
+          <h1 class="hero-title">
+            <span>Превращаю</span>
+            <span>финансы в инструмент</span>
+            <span>управления бизнесом</span>
+          </h1>
+
+          <p class="hero-lead">
+            Захаренко Оксана Геннадьевна — эксперт в области финансов и экономики,
+            с глубоким погружением в бизнес-процессы, анализом и поиском решений
+            для повышения доходности и устойчивости бизнеса.
+          </p>
+
+          <ul class="hero-points">
+            <li>Рост бизнеса до 5 млрд ₽</li>
+            <li>Внедрение учета → +50% выручки</li>
+            <li>Финансовые модели инвестпроектов</li>
+            <li>Управление денежными потоками</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Обсудить задачи бизнеса</a>
+            <a class="btn btn-secondary" href="#cases">Смотреть кейсы</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="metric reveal reveal-delay-1">
+            <div class="metric-label">Сегмент</div>
+            <div class="metric-value">Средний бизнес</div>
+            <div class="metric-note">Компании с оборотом 300–1000 млн ₽</div>
+          </div>
+
+          <div class="metric reveal reveal-delay-2">
+            <div class="metric-label">Ключевой результат</div>
+            <div class="metric-value">Управляемость</div>
+            <div class="metric-note">Понятная прибыль, контроль денег, решения на основе цифр</div>
+          </div>
+
+          <div class="metric reveal reveal-delay-3">
+            <div class="metric-label">Отрасли экспертизы</div>
+            <div class="metric-note">
+              Добыча и переработка полезных ископаемых, металлургия,
+              производство металлоконструкций
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow">Когда я полезна бизнесу</div>
+          <div class="divider"></div>
+          <h2 class="section-title">Финансовая система должна помогать зарабатывать, а не просто считать</h2>
+          <p class="section-subtitle">
+            Обычно ко мне обращаются, когда бизнес уже вырос, но управляемость через финансы
+            не выстроена или перестала соответствовать масштабу компании.
+          </p>
+        </div>
+
+        <div class="split-grid">
+          <div class="panel reveal reveal-delay-1">
+            <h3>Типичные проблемы</h3>
+            <ul class="list">
+              <li>Прибыль есть, но денег не хватает</li>
+              <li>Нет прозрачности в финансах</li>
+              <li>Регулярные кассовые разрывы</li>
+              <li>Решения принимаются “на ощущениях”</li>
+              <li>Бизнес растет быстрее, чем система управления</li>
+            </ul>
+          </div>
+
+          <div class="panel reveal reveal-delay-2">
+            <h3>Что получает собственник</h3>
+            <ul class="list">
+              <li>Понятную и достоверную прибыль</li>
+              <li>Контроль денежных потоков</li>
+              <li>Снижение финансовых рисков</li>
+              <li>Прозрачную картину бизнеса</li>
+              <li>Основание для роста и инвестиционных решений</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow">Ключевые компетенции</div>
+          <div class="divider"></div>
+          <h2 class="section-title">Что я делаю</h2>
+          <p class="section-subtitle">
+            Выстраиваю систему управления бизнесом через финансы — от диагностики до роли внешнего CFO.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal reveal-delay-1">
+            <div class="skill-icon">📊</div>
+            <h3>Управленческий учет</h3>
+            <p>
+              Внедряю систему, которая показывает реальную финансовую картину и
+              помогает принимать решения на основе цифр.
+            </p>
+          </article>
+
+          <article class="skill-card reveal reveal-delay-2">
+            <div class="skill-icon">💸</div>
+            <h3>Cash Flow</h3>
+            <p>
+              Выстраиваю контроль денежных потоков, платежный календарь и логику
+              управления ликвидностью без хаоса и кассовых разрывов.
+            </p>
+          </article>
+
+          <article class="skill-card reveal reveal-delay-3">
+            <div class="skill-icon">📈</div>
+            <h3>Бюджетирование</h3>
+            <p>
+              Формирую систему бюджетов и контроля отклонений, чтобы рост бизнеса
+              был управляемым и экономически обоснованным.
+            </p>
+          </article>
+
+          <article class="skill-card reveal reveal-delay-4">
+            <div class="skill-icon">🧭</div>
+            <h3>Финансовые модели</h3>
+            <p>
+              Разрабатываю модели и сценарии для собственника — от оценки
+              инвестпроектов до выбора оптимальных решений.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow">Кейсы</div>
+          <div class="divider"></div>
+          <h2 class="section-title">Результаты, которые подтверждают уровень</h2>
+          <p class="section-subtitle">
+            Кратко — без лишних деталей, только действие и результат.
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case-card reveal reveal-delay-1">
+            <div class="case-tag">Рост бизнеса</div>
+            <h3>Финансовая система с нуля</h3>
+            <p>
+              Разработала и внедрила финансовые инструменты, процедуры контроля,
+              автоматизацию в 1С и обеспечила банковское финансирование для роста.
+            </p>
+            <div class="case-result">
+              Результат: рост бизнеса до 5 млрд ₽, компания вошла в рейтинги быстрорастущих.
+            </div>
+          </article>
+
+          <article class="case-card reveal reveal-delay-2">
+            <div class="case-tag">Управленческий учет</div>
+            <h3>Транспортная компания, вахтовый метод</h3>
+            <p>
+              Внедрила управленческий учет и отчетность в сложной операционной модели
+              с высокой зависимостью от прозрачности затрат и доходности направлений.
+            </p>
+            <div class="case-result">
+              Результат: рост выручки более чем на 50%, оборот около 2 млрд ₽.
+            </div>
+          </article>
+
+          <article class="case-card reveal reveal-delay-3">
+            <div class="case-tag">Инвестиционные решения</div>
+            <h3>Модель разработки месторождения золота</h3>
+            <p>
+              Построила вариативную финансовую модель проекта с понятными экономическими
+              показателями для собственника и возможностью сравнивать сценарии.
+            </p>
+            <div class="case-result">
+              Результат: прозрачная экономика проекта и основа для инвестиционных решений.
+            </div>
+          </article>
+
+          <article class="case-card reveal reveal-delay-4">
+            <div class="case-tag">Доходность денежных средств</div>
+            <h3>Группа компаний после покупки бизнеса</h3>
+            <p>
+              Выстроила оптимизированную схему денежных потоков и налогообложения,
+              усилила работу с банками и управление ликвидностью.
+            </p>
+            <div class="case-result">
+              Результат: размещение средств по ставке выше рынка — ключевая +1–2%.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow">Инструменты и подходы</div>
+          <div class="divider"></div>
+          <h2 class="section-title">Сетка компетенций</h2>
+          <p class="section-subtitle">
+            Практические инструменты, которые помогают повышать доходность и устойчивость бизнеса.
+          </p>
+        </div>
+
+        <div class="expertise-box reveal reveal-delay-1">
+          <p>
+            Глубоко погружаюсь в бизнес-процессы, анализирую финансовую логику компании
+            и нахожу решения, которые работают на прибыль, ликвидность и устойчивость.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Управленческий учет</span>
+            <span class="tag">Бюджетирование</span>
+            <span class="tag">Cash Flow</span>
+            <span class="tag">Платежный календарь</span>
+            <span class="tag">Финансовое моделирование</span>
+            <span class="tag">Инвестиционный анализ</span>
+            <span class="tag">Банковское финансирование</span>
+            <span class="tag">Налоговая эффективность</span>
+            <span class="tag">Автоматизация в 1С</span>
+            <span class="tag">Финансовый контроль</span>
+            <span class="tag">Антикризисные решения</span>
+            <span class="tag">Повышение доходности</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow">Форматы работы</div>
+          <div class="divider"></div>
+          <h2 class="section-title">Как можно работать</h2>
+          <p class="section-subtitle">
+            Формат подбирается под задачу бизнеса, степень вовлеченности и уровень управленческих решений.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal reveal-delay-1">
+            <div class="skill-icon">🔎</div>
+            <h3>Диагностика</h3>
+            <p>Краткий аудит финансовой системы, точек риска и зон роста.</p>
+          </article>
+
+          <article class="skill-card reveal reveal-delay-2">
+            <div class="skill-icon">⚙️</div>
+            <h3>Проект</h3>
+            <p>Постановка учета, бюджетирования, контроля денежных потоков и отчетности.</p>
+          </article>
+
+          <article class="skill-card reveal reveal-delay-3">
+            <div class="skill-icon">🤝</div>
+            <h3>Сопровождение</h3>
+            <p>Регулярная аналитика, финансовая дисциплина и поддержка решений собственника.</p>
+          </article>
+
+          <article class="skill-card reveal reveal-delay-4">
+            <div class="skill-icon">🏛️</div>
+            <h3>Внешний CFO</h3>
+            <p>Полноценная финансовая функция для бизнеса без найма CFO в штат.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <div class="eyebrow">Контакты</div>
+            <h2>Готова обсудить задачи вашего бизнеса</h2>
+            <p>
+              Если вам нужен финансовый директор, который не просто считает цифры,
+              а помогает управлять прибылью, денежными потоками и устойчивостью бизнеса —
+              напишите мне.
+            </p>
+          </div>
+
+          <div class="contact-list">
+            <a class="contact-item" href="mailto:ogzazaharenko@yanex.ru">
+              Email: ogzazaharenko@yanex.ru
+            </a>
+            <a class="contact-item" href="tel:+79122614000">
+              Телефон: +7 912 261 4000
+            </a>
+            <a class="contact-item" href="https://t.me/OxanaZaharenko" target="_blank" rel="noopener noreferrer">
+              Telegram: @OxanaZaharenko
+            </a>
+            <div class="contact-item">
+              Захаренко Оксана Геннадьевна
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Захаренко Оксана Геннадьевна — Финансовый директор на аутсорсе
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const hero = document.querySelector(".hero");
+    window.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 10;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+      if (hero && window.innerWidth > 1024) {
+        hero.style.transform = `translate3d(${x * 0.4}px, ${y * 0.2}px, 0)`;
+      }
+    });
+
+    window.addEventListener("mouseleave", () => {
+      if (hero) {
+        hero.style.transform = "translate3d(0,0,0)";
+      }
+    });
+  </script>
+</body>
+</html>
